@@ -1,4 +1,6 @@
-assume cs:code,ds:data
+;10b) Move the elevator to the first request floor and bring it back to ground floor in elevator interface. The
+;elevator need not respond to the intermediate requests in both directions
+;assume cs:code,ds:data
 
 data segment
         pa equ 20A0h
@@ -12,7 +14,7 @@ start:
 	mov ax,data	
 	mov ds,ax
 	
-	mov al, 82h		; port A output, port B input
+	mov al, 82h		; port A output, port B input,port C output
 	mov dx,cr
 	out dx,al
 

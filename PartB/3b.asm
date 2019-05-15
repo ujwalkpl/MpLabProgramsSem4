@@ -1,3 +1,6 @@
+;3b) Rotate the stepper motor clockwise/anticlockwise or in both directions by x degrees [x will be specified at the
+;time of experiment].
+
 assume cs:code,ds:data
 data segment
 pa equ 20a0h

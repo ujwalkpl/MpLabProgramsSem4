@@ -1,4 +1,5 @@
-assume cs:code,ds:data
+;8b) Display FIRE and HELP alternatively n number of times on seven segment display interface
+;assume cs:code,ds:data
 
 data segment
         pa equ 20A0h
@@ -17,7 +18,7 @@ start:
         mov ds,ax
 
 	mov dx,cr
-	mov al,80h
+	mov al,80h ; port A output,port B output ,port C upper and lower Output
         out dx,al
 
 rpt:

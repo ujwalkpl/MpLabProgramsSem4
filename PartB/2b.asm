@@ -1,3 +1,4 @@
+;2b) Implement i) Ring Counter ii) BCD up-down Counter using logic controller interface
 assume cs:code,ds:data
 data segment
      pa equ 20a0h
