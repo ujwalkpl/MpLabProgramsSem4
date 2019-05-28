@@ -1,6 +1,7 @@
 ;10b) Move the elevator to the first request floor and bring it back to ground floor in elevator interface. The
 ;elevator need not respond to the intermediate requests in both directions
-;assume cs:code,ds:data
+
+assume cs:code,ds:data
 
 data segment
         pa equ 20A0h
@@ -22,11 +23,12 @@ start:
 	mov al,00h		; clear all requests, make elevator stand at first LED
 	out dx,al
 	mov al,0f0h		; enable requests
-	out dx,al
+	out dx,al        
 	
 	mov dx, pb		; to read request
 	
-scan_again:
+scan
+_again:
 	in al, dx		
 	and al,0fh		; masking MS 4 bits
 	cmp al,0fh		; any request?
@@ -64,7 +66,7 @@ come_down:
 	call delay
 	dec al
 	cmp al,00h	  	; reached ground floor?
-	jge come_down 	; no, then come down still
+	jge come_down     	; no, then come down still
 	
 	mov ah,4ch 
 	int 21h
