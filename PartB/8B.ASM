@@ -7,8 +7,9 @@ data segment
         pc equ 20A2h
         cr equ 20A3h
 
-        fire db 71h,9fh,0f5h,61h               ; F I r E
-        help db 0d1h,61h,0e3h,31h               ; H E L P
+        fire db 71h,9fh,0f5h,61h               ; F I r E 71h 9fh f5h 61h
+        help db 0d1h,61h,0e3h,31h               ; H E L P 91h 61h e3h 31h
+						; H E r E 91h 61h f5h 61h
 
 data ends
 

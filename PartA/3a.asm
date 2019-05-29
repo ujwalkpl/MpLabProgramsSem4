@@ -68,6 +68,7 @@ code segment
               lea di,pwd2
               cld
               mov ch,0
+
               rep cmpsb
               jnz mismatch
             

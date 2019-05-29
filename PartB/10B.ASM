@@ -26,9 +26,9 @@ start:
 	out dx,al        
 	
 	mov dx, pb		; to read request
+
 	
-scan
-_again:
+scan_again:
 	in al, dx		
 	and al,0fh		; masking MS 4 bits
 	cmp al,0fh		; any request?

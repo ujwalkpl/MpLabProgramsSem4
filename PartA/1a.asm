@@ -45,6 +45,7 @@ code segment
 
           success:
                    inc al
+		   
                    add al,30h
                    mov pos,al
                    lea dx,msg2

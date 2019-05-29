@@ -12,26 +12,26 @@ disp macro			;macro to display the key pressed
         int 21h
         endm
 
-initialize macro word
-        mov al,word
-        mov dx,20a3h
-        out dx,al
-        endm
-
 assume ds:data,cs:code
 
 data segment
-        cw db 90h
-        ops db 3 dup(?)
-        table1 db '0123456789.+-'
-        msg1 db "not supported$"
+       pa equ 20a0h
+	pb equ 20a1h
+	pc equ 20a2h
+	cr equ 20a3h
+	ops db 3 dup(?)
+	table1 db '0123456789.+-'
+	msg1 db "not supported$"
 data ends
 
 code segment
 start:
         mov ax,data
         mov ds,ax
-        initialize cw
+       
+	mov al,90h
+	mov dx,cr
+	out dx,al
 
         call readkp		; to read first operand
         call delay		; to eliminate switch debouncing problem
@@ -103,16 +103,18 @@ finish: mov ah,4ch
 
 readkp proc		; procedure which returns scan code of the key pressed
 try_again:
-        mov bl,01
-        mov bh,03
-        mov cl,00
+        mov bl,01 ;port c output
+        mov bh,03 ;loop variable 3 rows
+        mov cl,00 ;scode
 
 next_row:
         mov al,bl
-        mov dx,20a2h
+        mov dx,pc
         out dx,al
-        mov dx,20a0h
+
+        mov dx,pa
         in al,dx
+
         cmp al,00h
         jne scode
         add cl,08h

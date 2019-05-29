@@ -12,6 +12,7 @@ start:
         mov ds,ax
         mov dx,cr
         mov al,82h ;port A is output port C output port B input
+
         out dx,al
         mov al,01
  rpt:
@@ -24,7 +25,7 @@ start:
         mov dl,0ffh
         int 21h
         popax
-        j2 rpt
+        jz rpt
         mov ah,4ch
         int 21h
 delay proc:
