@@ -45,6 +45,6 @@ stack_seg segment
        code ends
        end start
 
-        cal:
+        
 
 
