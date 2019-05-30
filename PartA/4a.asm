@@ -41,8 +41,6 @@ data segment
        disp:
           mov ah,9h
           int 21h
-          mov ah,07h
-          int 21h
           mov ah,4ch
           int 21h
           code ends
