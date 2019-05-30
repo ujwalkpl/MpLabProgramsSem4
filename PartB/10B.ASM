@@ -15,7 +15,7 @@ start:
 	mov ax,data	
 	mov ds,ax
 	
-	mov al, 82h		; port A output, port B input,port C output
+	mov al, 82h		; port A output, port B input
 	mov dx,cr
 	out dx,al
 

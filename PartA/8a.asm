@@ -19,11 +19,11 @@ start:
          push cx
          mov ah,00h
          mov cx,4
-         shl ax,4
-         shr al,4
+         shl ax,cx
+         shr al,cx
          add ax,3030h
          push ax
-         mov al,ah
+         mov dl,ah
          mov ah,2
          int 21h
          pop ax

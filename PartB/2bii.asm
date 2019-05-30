@@ -13,7 +13,8 @@ code segment
          mov ds,ax
 
          mov dx,cr
-         mov al,82h
+         mov al,82h ;port b is output
+
          out dx,al
 
          mov cx,100d

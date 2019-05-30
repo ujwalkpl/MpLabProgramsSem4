@@ -15,7 +15,7 @@ disp macro			;macro to display the key pressed
 assume ds:data,cs:code
 
 data segment
-       pa equ 20a0h
+       	pa equ 20a0h
 	pb equ 20a1h
 	pc equ 20a2h
 	cr equ 20a3h

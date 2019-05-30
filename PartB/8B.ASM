@@ -19,7 +19,7 @@ start:
         mov ds,ax
 
 	mov dx,cr
-	mov al,80h ; port A output,port B output ,port C upper and lower Output
+	mov al,80h ; port B output ,port C upper and lower Output
         out dx,al
 
 rpt:

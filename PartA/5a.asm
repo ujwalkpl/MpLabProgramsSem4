@@ -1,3 +1,4 @@
+;to display stack d ss:65525 65535     ffffh=65535
 assume cs:code, ds:data
 data segment
      n db 5

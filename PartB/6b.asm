@@ -16,7 +16,7 @@ start:
         mov ds,ax
 
         mov dx,cr
-        mov al,90h
+        mov al,90h;port a is input port c is output
         out dx,al	
 try_again:
         mov bl,01h  	;output for port c first 001 then 010 then 100

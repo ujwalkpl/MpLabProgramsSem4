@@ -11,7 +11,7 @@ start:
         mov ax,data
         mov ds,ax
         mov dx,cr
-        mov al,82h ;port A is output port C output port B input
+        mov al,82h ;port A is output 
 
         out dx,al
         mov al,01

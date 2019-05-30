@@ -16,7 +16,7 @@ start:
 mov ax,data
 mov ds,ax
 mov dx,cr
-mov al,80h
+mov al,80h;port a is output
 out dx,al
 mov cx,64h  ; 180 degree rotation 180/1.8 = 100 in hexadecimal = 64h
 mov al,77h  ; to help in the rotation using ror/rol the lower four bits are copied to upper bits

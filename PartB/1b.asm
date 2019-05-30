@@ -1,3 +1,4 @@
+
 ;1b) Count and display number of 1?s in the input given using switches of a logical controller interface.
 assume cs:code,ds:data
 data segment
@@ -15,7 +16,7 @@ code segment
          mov ds,ax
 
          mov dx,cr
-         mov al,82h ;port A output port C output port B input
+         mov al,82h ;port A output port B input
          out dx,al
 
          mov dx,pb
